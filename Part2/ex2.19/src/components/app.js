@@ -70,7 +70,7 @@ const App = () => {
           setMessage(`Unable to add ${newNameObject.name}`)
         })
       }
-      setTimeout( () => setMessage(""), 500)
+      setTimeout( () => setMessage(""), 2500)
   }
 
   const handleNewNameChange =(event) =>{
@@ -103,7 +103,7 @@ const App = () => {
           setWarning(true)
           setMessage(`${cnt.name} was already removed from contacts`)
         })
-        setTimeout( () => setMessage(""), 500)
+        setTimeout( () => setMessage(""), 2500)
   }
   }
 

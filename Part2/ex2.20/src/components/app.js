@@ -46,6 +46,8 @@ const App = () => {
               setWarning(false)
               setMessage(`Updated ${newNameObject.name}`)
               setPersons( persons.map( person => person.id===response.id? response: person))
+              setNewName('')
+              setNewNumber('')
             })
             .catch( error =>{
               setWarning(true)
@@ -68,7 +70,7 @@ const App = () => {
           setMessage(`Unable to add ${newNameObject.name}`)
         })
       }
-      setTimeout( () => setMessage(""), 5000)
+      setTimeout( () => setMessage(""), 2500)
   }
 
   const handleNewNameChange =(event) =>{
@@ -94,12 +96,14 @@ const App = () => {
           setMessage(`${cnt.name} is succesfully deleted`)
           console.log(`${cnt.name} is succesfully deleted`)
           setPersons( persons.filter( person => person.id!==cnt.id ))
+          setNewName('')
+          setNewNumber('')
         })
         .catch(Error =>{
           setWarning(true)
           setMessage(`${cnt.name} was already removed from contacts`)
         })
-        setTimeout( () => setMessage(""), 5000)
+        setTimeout( () => setMessage(""), 2500)
   }
   }
 
